@@ -53,6 +53,7 @@ public class Cinema {
 	}
 
 	private static void showMenu() {
+		//prints the menu options
 		System.out.println("\n--- Cinema Menu ---");
 		System.out.println("1. Show the seats");
 		System.out.println("2. Buy a ticket");
@@ -63,6 +64,7 @@ public class Cinema {
 	}
 
 	private static void createCinema() {
+		//creates a cinema of n*n size where n is a number 1 - 9
 		System.out.print("Enter the number of rows: ");
 		isNumeric();
 		numRows = scan.nextInt();
@@ -89,6 +91,7 @@ public class Cinema {
 	}
 
 	private static void isNumeric() {
+		//checks if the user has entered a numeric value
 		while (!scan.hasNextInt()) { // Check if input is an integer
 			System.out.print("Error! Please enter a numeric value: ");
 			scan.next(); // Consume the invalid input
@@ -96,6 +99,7 @@ public class Cinema {
 	}
 
 	private static void printCinemaHall() {
+		//print the size of the cinema and the availability of seats
 		System.out.println("Cinema:");
 		System.out.print(" ");
 		for (int i = 1; i < cinemaHall[0].length + 1; i++) {
@@ -112,6 +116,7 @@ public class Cinema {
 	}
 
 	private static void bookTicket() {
+		//user chooses which seat they would like to book
 		System.out.println("Enter a row number: ");
 		isNumeric();
 		int seatRow = scan.nextInt();
@@ -134,6 +139,7 @@ public class Cinema {
 	}
 
 	private static void deleteBooking() {
+		//user chooses which booking they would like to delete
 		System.out.println("Enter your row number: ");
 		isNumeric();
 		int seatRow = scan.nextInt();
@@ -171,6 +177,7 @@ public class Cinema {
 	}
 
 	private static void upgradeSeat() {
+		//user chooses which seat they would like to upgrade
 		System.out.println("Enter your row number: ");
 		isNumeric();
 		int seatRow = scan.nextInt();
@@ -199,6 +206,7 @@ public class Cinema {
 	}
 
 	private static int calcTicketPrice(int seatRow) {
+		//returns the cost of the ticket choosen
 		if (totalNumSeats <= 60 || seatRow <= numRows / 2) {
 			return 10;
 		} else {
@@ -207,12 +215,14 @@ public class Cinema {
 	}
 
 	private static void checkCinemaAvailability() {
+		//prints the amount of seats taken and available, and shows how much money has been made
 		System.out.println("Total number of seats in the cinema: " + totalNumSeats);		
 		System.out.println("Total number of seats available: " + (totalNumSeats - seatsTaken));
 		System.out.println("Total income made so far: $" + totalIncome);
 	}
 
 	private static void checkSeatAvailable(int seatRow, int seatNum, int priceTicket) {
+		//checks if the seat that is trying to be booked is already taken
 		if (cinemaHall[seatRow - 1][seatNum - 1] == 'T') {
 			System.out.println("Seat is already taken!");
 		} else {
