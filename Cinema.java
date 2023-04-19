@@ -12,6 +12,7 @@ public class Cinema {
 	}
 
 	private static void startCinemaBooking() {
+		//let user create the cinema then continue to display the menu until user chooses to exit
 		createCinema();
 		int command;
 		do {
@@ -24,21 +25,27 @@ public class Cinema {
 			command = scan.nextInt();
 			switch (command) {
 			case 1:
+			//show seats
 				printCinemaHall();
 				break;
 			case 2:
+			//books a ticket
 				bookTicket();
 				break;
 			case 3: 
+			//check the cinema statistics
 				checkCinemaAvailability();
 				break;
 			case 4:
+			//delete a booking
 				deleteBooking();
 				break;
 			case 5:
+			//upgrade a seat
 				upgradeSeat();
 				break;
 			case 6:
+			//check if a ticket has been bought or not for exit message
 				if (numBookings == 0) {
 					System.out.println("Thank you for browsing the cinema!");
 				} else {
@@ -46,6 +53,7 @@ public class Cinema {
 				}
 				break;
 			default:
+			//error message if incorrect input is given
 				System.out.println("Error! Please enter either 1, 2, 3: ");
 				break;
 			}
