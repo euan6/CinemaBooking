@@ -212,5 +212,6 @@ public class Cinema {
 			isNumeric();
 			seatRow = scan.nextInt();
 		}
+		return seatRow;
 	}
 }
