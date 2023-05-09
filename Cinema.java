@@ -203,7 +203,7 @@ public class Cinema {
 		}
 	}
 
-	private static void checkInRange(String seat) {
+	private static int checkInRange(String seat) {
 		System.out.println("Enter your " + seat + " number: ");
 		isNumeric();
 		int seatRow = scan.nextInt();
