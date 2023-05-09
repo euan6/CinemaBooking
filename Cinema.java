@@ -6,6 +6,8 @@ public class Cinema {
 	private static Scanner scan = new Scanner(System.in);
 	private static char[][] cinemaHall;
 	private static int numRows, numSeats, totalNumSeats, seatsTaken, totalIncome, numBookings;
+	private static final String SEAT_ROW = "row";
+	private static final String SEAT_NUM = "number";
 
 	public static void main(String[] args) {
 		startCinemaBooking();
@@ -241,5 +243,9 @@ public class Cinema {
 			seatsTaken++;
 			numBookings++;
 		}
+	}
+
+	private static void checkInRange() {
+
 	}
 }
