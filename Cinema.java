@@ -6,8 +6,8 @@ public class Cinema {
 	private static Scanner scan = new Scanner(System.in);
 	private static char[][] cinemaHall;
 	private static int numRows, numSeats, totalNumSeats, seatsTaken, totalIncome, numBookings;
-	private static final String SEAT_ROW = "row";
-	private static final String SEAT_NUM = "number";
+	private static final String ROW_NUM = "row";
+	private static final String SEAT_NUM = "seat";
 
 	public static void main(String[] args) {
 		startCinemaBooking();
@@ -190,14 +190,7 @@ public class Cinema {
 
 	private static void upgradeSeat() {
 		//user chooses which seat they would like to upgrade
-		System.out.println("Enter your row number: ");
-		isNumeric();
-		int seatRow = scan.nextInt();
-		while (seatRow < 1 || seatRow > numRows) {
-			System.out.print("Error! please enter a valid row number: ");
-			isNumeric();
-			seatRow = scan.nextInt();
-		}
+		checkInRange(ROW_NUM);
 		System.out.println("Enter your seat number in that row: ");
 		isNumeric();
 		int seatNum = scan.nextInt();
@@ -245,7 +238,14 @@ public class Cinema {
 		}
 	}
 
-	private static void checkInRange() {
-
+	private static void checkInRange(String seat) {
+		System.out.println("Enter your " + seat + " number: ");
+		isNumeric();
+		int seatRow = scan.nextInt();
+		while (seatRow < 1 || seatRow > numRows) {
+			System.out.print("Error! please enter a valid " + seat + " number: ");
+			isNumeric();
+			seatRow = scan.nextInt();
+		}
 	}
 }
