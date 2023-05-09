@@ -100,9 +100,9 @@ public class Cinema {
 
 	private static void isNumeric() {
 		//checks if the user has entered a numeric value
-		while (!scan.hasNextInt()) { // Check if input is an integer
+		while (!scan.hasNextInt()) { //check if input is an integer
 			System.out.print("Error! Please enter a numeric value: ");
-			scan.next(); // Consume the invalid input
+			scan.next(); //consume the invalid input
 		}
 	}
 
