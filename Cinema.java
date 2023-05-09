@@ -76,6 +76,7 @@ public class Cinema {
 		System.out.print("Enter the number of rows: ");
 		isNumeric();
 		numRows = scan.nextInt();
+		//get number of rows in cinema
 		while (numRows < 1 || numRows > 9) {
 			System.out.print("Error! number must be between (1 - 9): ");
 			isNumeric();
@@ -84,6 +85,7 @@ public class Cinema {
 		System.out.print("Enter the number of seats in each row: ");
 		isNumeric();
 		numSeats = scan.nextInt();
+		//get number of seats in cinema
 		while (numSeats < 1 || numSeats > 9) {
 			System.out.print("Error! number must be between (1 - 9): ");
 			isNumeric();
