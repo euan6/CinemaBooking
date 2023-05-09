@@ -129,22 +129,8 @@ public class Cinema {
 
 	private static void bookTicket() {
 		//user chooses which seat they would like to book
-		System.out.println("Enter a row number: ");
-		isNumeric();
-		int seatRow = scan.nextInt();
-		while (seatRow < 1 || seatRow > numRows) {
-			System.out.print("Error! please enter a valid row number: ");
-			isNumeric();
-			seatRow = scan.nextInt();
-		}
-		System.out.println("Enter a seat number in that row: ");
-		isNumeric();
-		int seatNum = scan.nextInt();
-		while (seatNum < 1 || seatNum > numSeats) {
-			System.out.print("Error! please enter a valid seat number: ");
-			isNumeric();
-			seatNum = scan.nextInt();
-		}
+		checkInRange(ROW_NUM);
+		checkInRange(SEAT_NUM);
 		int ticketPrice = calcTicketPrice(seatRow);
 		checkSeatAvailable(seatRow, seatNum, ticketPrice);
 		totalIncome += ticketPrice;
@@ -152,22 +138,8 @@ public class Cinema {
 
 	private static void deleteBooking() {
 		//user chooses which booking they would like to delete
-		System.out.println("Enter your row number: ");
-		isNumeric();
-		int seatRow = scan.nextInt();
-		while (seatRow < 1 || seatRow > numRows) {
-			System.out.print("Error! please enter a valid row number: ");
-			isNumeric();
-			seatRow = scan.nextInt();
-		}
-		System.out.println("Enter your seat number in that row: ");
-		isNumeric();
-		int seatNum = scan.nextInt();
-		while (seatNum < 1 || seatNum > numSeats) {
-			System.out.print("Error! please enter a valid seat number: ");
-			isNumeric();
-			seatNum = scan.nextInt();
-		}
+		checkInRange(ROW_NUM);
+		checkInRange(SEAT_NUM);
 		if (cinemaHall[seatRow - 1][seatNum - 1] == 'A') {
 			System.out.println("There is currently no booking for that seat!");
 			return;
@@ -191,14 +163,7 @@ public class Cinema {
 	private static void upgradeSeat() {
 		//user chooses which seat they would like to upgrade
 		checkInRange(ROW_NUM);
-		System.out.println("Enter your seat number in that row: ");
-		isNumeric();
-		int seatNum = scan.nextInt();
-		while (seatNum < 1 || seatNum > numSeats) {
-			System.out.print("Error! please enter a valid seat number: ");
-			isNumeric();
-			seatNum = scan.nextInt();
-		}
+		checkInRange(SEAT_NUM);
 		if (cinemaHall[seatRow - 1][seatNum - 1] == 'A') {
 			System.out.println("There is currently no booking for that seat!");
 			return;
