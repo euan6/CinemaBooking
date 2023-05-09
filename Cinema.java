@@ -129,8 +129,8 @@ public class Cinema {
 
 	private static void bookTicket() {
 		//user chooses which seat they would like to book
-		checkInRange(ROW_NUM);
-		checkInRange(SEAT_NUM);
+		int seatRow = checkInRange(ROW_NUM);
+		int seatNum = checkInRange(SEAT_NUM);
 		int ticketPrice = calcTicketPrice(seatRow);
 		checkSeatAvailable(seatRow, seatNum, ticketPrice);
 		totalIncome += ticketPrice;
@@ -138,8 +138,8 @@ public class Cinema {
 
 	private static void deleteBooking() {
 		//user chooses which booking they would like to delete
-		checkInRange(ROW_NUM);
-		checkInRange(SEAT_NUM);
+		int seatRow = checkInRange(ROW_NUM);
+		int seatNum = checkInRange(SEAT_NUM);
 		if (cinemaHall[seatRow - 1][seatNum - 1] == 'A') {
 			System.out.println("There is currently no booking for that seat!");
 			return;
@@ -162,8 +162,8 @@ public class Cinema {
 
 	private static void upgradeSeat() {
 		//user chooses which seat they would like to upgrade
-		checkInRange(ROW_NUM);
-		checkInRange(SEAT_NUM);
+		int seatRow = checkInRange(ROW_NUM);
+		int seatNum = checkInRange(SEAT_NUM);
 		if (cinemaHall[seatRow - 1][seatNum - 1] == 'A') {
 			System.out.println("There is currently no booking for that seat!");
 			return;
